@@ -7,4 +7,6 @@ response = requests.get(f"{base_url}/{selected_year}")
 
 selected_top_100 = response.text
 
-print(selected_top_100)
+soup = BeautifulSoup(selected_top_100, 'html.parser')
+
+print(soup.prettify())
