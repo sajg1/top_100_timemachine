@@ -9,4 +9,9 @@ selected_top_100 = response.text
 
 soup = BeautifulSoup(selected_top_100, 'html.parser')
 
-print(soup.prettify())
+song_names_span = soup.find_all(name="span", class_="chart-element__information__song")
+
+
+song_names = [song.getText() for song in song_names_span]
+print(song_names)
+
