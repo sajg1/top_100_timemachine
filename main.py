@@ -49,5 +49,10 @@ for song in song_names:
         print("Not on spotify")
 
 # create playlist
-sp.user_playlist_create(user=user_id, name=f"{selected_year} Billboard 100", public=False, collaborative=False, description="")
+new_playlist = sp.user_playlist_create(user=user_id, name=f"{selected_year} Billboard 100", public=False, collaborative=False, description="")
+new_playlist_id = new_playlist['id']
+print(new_playlist_id)
 
+# add songs to playlist
+
+sp.playlist_add_items(playlist_id=new_playlist_id, items=track_uri_list, position=None)
