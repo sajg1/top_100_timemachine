@@ -48,5 +48,6 @@ for song in song_names:
     except IndexError:
         print("Not on spotify")
 
-print(track_uri_list)
+# create playlist
+sp.user_playlist_create(user=user_id, name=f"{selected_year} Billboard 100", public=False, collaborative=False, description="")
 
